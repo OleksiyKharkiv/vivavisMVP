@@ -35,7 +35,7 @@ POST /api/sensors:
 
 Example Request:
 
-json
+```json
 {
     "sensorId": "VS-12345",
     "sensorName": "Voltage Drop Sensor",
@@ -47,13 +47,14 @@ json
         "id": "d832b0df-e8a2-4b0b-9a39-7b23e4663c1e"
     }
 }
+```
 The "id" for the alert should be taken from the response of the POST /api/alerts request.
 
 POST /api/events:
 
 Example Request:
 
-json
+```json
 
 {
     "eventType": "Voltage drop 10%",
@@ -62,13 +63,14 @@ json
         "id": "3d46df33-b671-4f9e-b992-fbaa30016ae3"
     }
 }
+```
 The "id" for the sensor should be taken from the response of the POST /api/sensors request.
 
 POST /api/users:
 
 Example Request:
 
-json
+```json
 
 {
     "username": "dispatcher_koblenz",
@@ -76,4 +78,5 @@ json
     "email": "dispatcher@koblenz-grid.de",
     "role": "DISPATCHER"
 }
+```
 This will create a new user in the system.
