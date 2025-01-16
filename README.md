@@ -23,12 +23,13 @@ POST /api/alerts:
 
 Example Request:
 
-json
+```json
 {
     "alertType": "Critical",
     "createdAt": "2025-01-16T12:30:00",
     "sensors": []
 }
+```
 This will create an alert. After this request, you will get an id for the alert.
 
 POST /api/sensors:
