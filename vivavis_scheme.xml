@@ -19,7 +19,7 @@
                 </mxCell>
                 <!-- Entity: Alert -->
                 <mxCell id="6" value="Alert" style="shape=swimlane" vertex="1" parent="1">
-                    <mxGeometry x="250" y="10" width="200" height="120" as="geometry" />
+                    <mxGeometry x="250" y="10" width="200" height="140" as="geometry" />
                 </mxCell>
                 <mxCell id="7" value="id: UUID (PK)" vertex="1" parent="6">
                     <mxGeometry x="10" y="40" width="180" height="20" as="geometry" />
@@ -29,6 +29,9 @@
                 </mxCell>
                 <mxCell id="9" value="created_at: TIMESTAMP" vertex="1" parent="6">
                     <mxGeometry x="10" y="100" width="180" height="20" as="geometry" />
+                </mxCell>
+                <mxCell id="22" value="status: String" vertex="1" parent="6">
+                    <mxGeometry x="10" y="130" width="180" height="20" as="geometry" />
                 </mxCell>
                 <!-- Entity: User -->
                 <mxCell id="10" value="User" style="shape=swimlane" vertex="1" parent="1">
@@ -57,16 +60,16 @@
                     <mxGeometry x="10" y="100" width="180" height="20" as="geometry" />
                 </mxCell>
                 <!-- Relationships -->
-                <mxCell id="18" value="" edge="1" parent="1" source="2" target="6">
+                <mxCell id="18" value="has_alert" edge="1" parent="1" source="2" target="6">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
-                <mxCell id="19" value="" edge="1" parent="1" source="10" target="6">
+                <mxCell id="19" value="created_by" edge="1" parent="1" source="10" target="6">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
-                <mxCell id="20" value="" edge="1" parent="1" source="10" target="14">
+                <mxCell id="20" value="logged_by" edge="1" parent="1" source="10" target="14">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
-                <mxCell id="21" value="" edge="1" parent="1" source="6" target="14">
+                <mxCell id="21" value="alerts_triggered" edge="1" parent="1" source="6" target="14">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
             </root>
