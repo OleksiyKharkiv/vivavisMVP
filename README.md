@@ -59,7 +59,7 @@ However, a complete security system with authentication and authorization (such 
 ## API Endpoints
 Please follow the order of entity creation as described below:
 
-# POST /api/alerts:
+### POST /api/alerts:
 
 Example Request:
 
@@ -72,7 +72,7 @@ Example Request:
 ```
 This will create an alert. After this request, you will get an id for the alert.
 
-# POST /api/sensors:
+### POST /api/sensors:
 
 Example Request:
 
@@ -91,7 +91,7 @@ Example Request:
 ```
 The "id" for the alert should be taken from the response of the POST /api/alerts request.
 
-# POST /api/events:
+### POST /api/events:
 
 Example Request:
 
@@ -107,7 +107,7 @@ Example Request:
 ```
 The "id" for the sensor should be taken from the response of the POST /api/sensors request.
 
-# POST /api/users:
+### POST /api/users:
 
 Example Request:
 
