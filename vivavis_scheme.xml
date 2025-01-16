@@ -4,96 +4,83 @@
             <root>
                 <mxCell id="0" />
                 <mxCell id="1" parent="0" />
-                <!-- Entity: Sensor -->
-                <mxCell id="22" value="Sensor" style="shape=swimlane" vertex="1" parent="1">
-                    <mxGeometry x="10" y="10" width="200" height="160" as="geometry" />
-                </mxCell>
-                <mxCell id="23" value="sensor_id: UUID (PK)" vertex="1" parent="22">
-                    <mxGeometry x="10" y="40" width="180" height="20" as="geometry" />
-                </mxCell>
-                <mxCell id="24" value="sensor_name: String" vertex="1" parent="22">
-                    <mxGeometry x="10" y="70" width="180" height="20" as="geometry" />
-                </mxCell>
-                <mxCell id="25" value="sensor_type: String" vertex="1" parent="22">
-                    <mxGeometry x="10" y="100" width="180" height="20" as="geometry" />
-                </mxCell>
-                <mxCell id="26" value="location: String" vertex="1" parent="22">
-                    <mxGeometry x="10" y="130" width="180" height="20" as="geometry" />
-                </mxCell>
-                <mxCell id="27" value="status: String" vertex="1" parent="22">
-                    <mxGeometry x="10" y="160" width="180" height="20" as="geometry" />
-                </mxCell>
 
-                <!-- Entity: SensorData -->
-                <mxCell id="2" value="SensorData" style="shape=swimlane" vertex="1" parent="1">
-                    <mxGeometry x="250" y="10" width="200" height="120" as="geometry" />
+                <!-- Entity: Sensor -->
+                <mxCell id="2" value="Sensor" style="shape=swimlane" vertex="1" parent="1">
+                    <mxGeometry x="10" y="10" width="200" height="180" as="geometry" />
                 </mxCell>
                 <mxCell id="3" value="id: UUID (PK)" vertex="1" parent="2">
                     <mxGeometry x="10" y="40" width="180" height="20" as="geometry" />
                 </mxCell>
-                <mxCell id="4" value="sensor_id: UUID (FK)" vertex="1" parent="2">
+                <mxCell id="4" value="sensor_id: String" vertex="1" parent="2">
                     <mxGeometry x="10" y="70" width="180" height="20" as="geometry" />
                 </mxCell>
-                <mxCell id="5" value="timestamp: TIMESTAMP" vertex="1" parent="2">
+                <mxCell id="5" value="sensor_name: String" vertex="1" parent="2">
                     <mxGeometry x="10" y="100" width="180" height="20" as="geometry" />
+                </mxCell>
+                <mxCell id="6" value="sensor_type: String" vertex="1" parent="2">
+                    <mxGeometry x="10" y="130" width="180" height="20" as="geometry" />
+                </mxCell>
+                <mxCell id="7" value="location: String" vertex="1" parent="2">
+                    <mxGeometry x="10" y="160" width="180" height="20" as="geometry" />
+                </mxCell>
+                <mxCell id="8" value="status: String" vertex="1" parent="2">
+                    <mxGeometry x="10" y="190" width="180" height="20" as="geometry" />
+                </mxCell>
+                <mxCell id="9" value="timestamp: TIMESTAMP" vertex="1" parent="2">
+                    <mxGeometry x="10" y="220" width="180" height="20" as="geometry" />
                 </mxCell>
 
                 <!-- Entity: Alert -->
-                <mxCell id="6" value="Alert" style="shape=swimlane" vertex="1" parent="1">
-                    <mxGeometry x="500" y="10" width="200" height="120" as="geometry" />
-                </mxCell>
-                <mxCell id="7" value="id: UUID (PK)" vertex="1" parent="6">
-                    <mxGeometry x="10" y="40" width="180" height="20" as="geometry" />
-                </mxCell>
-                <mxCell id="8" value="alert_type: String" vertex="1" parent="6">
-                    <mxGeometry x="10" y="70" width="180" height="20" as="geometry" />
-                </mxCell>
-                <mxCell id="9" value="created_at: TIMESTAMP" vertex="1" parent="6">
-                    <mxGeometry x="10" y="100" width="180" height="20" as="geometry" />
-                </mxCell>
-
-                <!-- Entity: User -->
-                <mxCell id="10" value="User" style="shape=swimlane" vertex="1" parent="1">
-                    <mxGeometry x="10" y="200" width="200" height="120" as="geometry" />
+                <mxCell id="10" value="Alert" style="shape=swimlane" vertex="1" parent="1">
+                    <mxGeometry x="250" y="10" width="200" height="120" as="geometry" />
                 </mxCell>
                 <mxCell id="11" value="id: UUID (PK)" vertex="1" parent="10">
                     <mxGeometry x="10" y="40" width="180" height="20" as="geometry" />
                 </mxCell>
-                <mxCell id="12" value="username: String" vertex="1" parent="10">
+                <mxCell id="12" value="alert_type: String" vertex="1" parent="10">
                     <mxGeometry x="10" y="70" width="180" height="20" as="geometry" />
                 </mxCell>
-                <mxCell id="13" value="email: String" vertex="1" parent="10">
+                <mxCell id="13" value="created_at: TIMESTAMP" vertex="1" parent="10">
                     <mxGeometry x="10" y="100" width="180" height="20" as="geometry" />
                 </mxCell>
 
-                <!-- Entity: EventLog -->
-                <mxCell id="14" value="EventLog" style="shape=swimlane" vertex="1" parent="1">
-                    <mxGeometry x="250" y="200" width="200" height="120" as="geometry" />
+                <!-- Entity: User -->
+                <mxCell id="14" value="User" style="shape=swimlane" vertex="1" parent="1">
+                    <mxGeometry x="10" y="200" width="200" height="120" as="geometry" />
                 </mxCell>
                 <mxCell id="15" value="id: UUID (PK)" vertex="1" parent="14">
                     <mxGeometry x="10" y="40" width="180" height="20" as="geometry" />
                 </mxCell>
-                <mxCell id="16" value="event_type: String" vertex="1" parent="14">
+                <mxCell id="16" value="username: String" vertex="1" parent="14">
                     <mxGeometry x="10" y="70" width="180" height="20" as="geometry" />
                 </mxCell>
-                <mxCell id="17" value="created_at: TIMESTAMP" vertex="1" parent="14">
+                <mxCell id="17" value="email: String" vertex="1" parent="14">
+                    <mxGeometry x="10" y="100" width="180" height="20" as="geometry" />
+                </mxCell>
+
+                <!-- Entity: EventLog -->
+                <mxCell id="18" value="EventLog" style="shape=swimlane" vertex="1" parent="1">
+                    <mxGeometry x="250" y="200" width="200" height="120" as="geometry" />
+                </mxCell>
+                <mxCell id="19" value="id: UUID (PK)" vertex="1" parent="18">
+                    <mxGeometry x="10" y="40" width="180" height="20" as="geometry" />
+                </mxCell>
+                <mxCell id="20" value="event_type: String" vertex="1" parent="18">
+                    <mxGeometry x="10" y="70" width="180" height="20" as="geometry" />
+                </mxCell>
+                <mxCell id="21" value="created_at: TIMESTAMP" vertex="1" parent="18">
                     <mxGeometry x="10" y="100" width="180" height="20" as="geometry" />
                 </mxCell>
 
                 <!-- Relationships -->
-                <mxCell id="18" value="" edge="1" parent="1" source="2" target="6">
+                <mxCell id="22" value="" edge="1" parent="1" source="10" target="14">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
-                <mxCell id="19" value="" edge="1" parent="1" source="10" target="6">
+                <mxCell id="23" value="" edge="1" parent="1" source="14" target="18">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
-                <mxCell id="20" value="" edge="1" parent="1" source="10" target="14">
-                    <mxGeometry relative="1" as="geometry" />
-                </mxCell>
-                <mxCell id="21" value="" edge="1" parent="1" source="6" target="14">
-                    <mxGeometry relative="1" as="geometry" />
-                </mxCell>
-                <mxCell id="28" value="" edge="1" parent="1" source="2" target="22">
+                <mxCell id="24" value="" edge="1" parent="1" source="10" target="18">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
             </root>
