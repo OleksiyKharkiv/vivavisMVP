@@ -1,4 +1,46 @@
 package com.example.vivavis.adapter.in;
 
+import com.example.vivavis.domain.entity.Alert;
+import com.example.vivavis.application.port.AlertServicePort;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/alerts")
 public class AlertController {
+
+    private final AlertServicePort alertService;
+
+    public AlertController(AlertServicePort alertService) {
+        this.alertService = alertService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Alert>> getAllAlerts() {
+        return ResponseEntity.ok(alertService.getAllAlerts());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Alert> getAlertById(@PathVariable Long id) {
+        return ResponseEntity.ok(alertService.getAlertById(id));
+    }
+
+    @PostMapping
+    public ResponseEntity<Alert> createAlert(@RequestBody Alert alert) {
+        return ResponseEntity.ok(alertService.createAlert(alert));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Alert> updateAlert(@PathVariable Long id, @RequestBody Alert updatedAlert) {
+        return ResponseEntity.ok(alertService.updateAlert(id, updatedAlert));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteAlert(@PathVariable Long id) {
+        alertService.deleteAlert(id);
+        return ResponseEntity.noContent().build();
+    }
 }
