@@ -7,8 +7,12 @@ import java.util.UUID;
 
 public interface UserServicePort {
     List<User> getAllUsers();
+
     User getUserById(UUID id);
+
     User createUser(User user);
+
     User updateUser(UUID id, User updatedUser);
+
     void deleteUser(UUID id);
 }

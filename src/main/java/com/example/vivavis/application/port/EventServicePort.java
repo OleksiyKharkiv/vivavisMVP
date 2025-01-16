@@ -7,8 +7,12 @@ import java.util.UUID;
 
 public interface EventServicePort {
     List<Event> getAllEvents();
+
     Event getEventById(UUID id);
+
     Event createEvent(Event event);
+
     Event updateEvent(UUID id, Event updatedEvent);
+
     void deleteEvent(UUID id);
 }

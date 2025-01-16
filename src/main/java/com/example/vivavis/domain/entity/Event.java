@@ -23,14 +23,14 @@ public class Event {
     private UUID id;  // Primary key
 
     @Column(name = "event_type", nullable = false)
-    private String eventType;  // Тип события (например, изменение данных сенсора)
+    private String eventType;
 
     @Column(name = "created_at", nullable = false)
-    private LocalDateTime createdAt;  // Время создания события
+    private LocalDateTime createdAt;
 
     @ManyToOne
     @JoinColumn(name = "sensor_id", referencedColumnName = "id", nullable = false)
-    private Sensor sensor;  // Многие события связаны с одним сенсором
+    private Sensor sensor;
 
     @Override
     public final boolean equals(Object o) {

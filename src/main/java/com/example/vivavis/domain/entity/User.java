@@ -22,16 +22,16 @@ public class User {
     private UUID id;  // Primary key
 
     @Column(name = "username", nullable = false, unique = true)
-    private String username;  // Уникальное имя пользователя
+    private String username;
 
     @Column(name = "password", nullable = false)
-    private String password;  // Хешированный пароль
+    private String password;
 
     @Column(name = "email", nullable = false, unique = true)
-    private String email;  // Email пользователя
+    private String email;
 
     @Column(name = "role", nullable = false)
-    private String role;  // Роль пользователя (e.g., ADMIN, USER)
+    private String role;
 
     @Override
     public final boolean equals(Object o) {

@@ -1,9 +1,7 @@
 package com.example.vivavis.adapter.in;
 
-import com.example.vivavis.domain.entity.Sensor;
 import com.example.vivavis.application.port.SensorServicePort;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.vivavis.domain.entity.Sensor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,8 +12,11 @@ import java.util.UUID;
 @RequestMapping("/api/sensors")
 public class SensorController {
 
-    @Autowired
-    private SensorServicePort sensorService;
+    private final SensorServicePort sensorService;
+
+    public SensorController(SensorServicePort sensorService) {
+        this.sensorService = sensorService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Sensor>> getAllSensors() {
