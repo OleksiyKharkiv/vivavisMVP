@@ -1,0 +1,119 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: user
+      changes:
+        - createTable:
+            tableName: sensors
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: sensor_id
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: sensor_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: sensor_type
+                  type: VARCHAR(255)
+              - column:
+                  name: location
+                  type: VARCHAR(255)
+              - column:
+                  name: status
+                  type: VARCHAR(50)
+              - column:
+                  name: timestamp
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: alert_id
+                  type: UUID
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+      id: 2
+      author: user
+      changes:
+        - createTable:
+            tableName: alerts
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: alert_type
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 3
+      author: user
+      changes:
+        - createTable:
+            tableName: events
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: event_type
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: sensor_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 4
+      author: user
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: sensors
+            baseColumnNames: alert_id
+            constraintName: fk_sensor_alert
+            referencedTableName: alerts
+            referencedColumnNames: id
+
+  - changeSet:
+      id: 5
+      author: user
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: events
+            baseColumnNames: sensor_id
+            constraintName: fk_event_sensor
+            referencedTableName: sensors
+            referencedColumnNames: id

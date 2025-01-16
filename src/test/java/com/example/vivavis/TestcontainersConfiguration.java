@@ -13,13 +13,19 @@ class TestcontainersConfiguration {
     @Bean
     @ServiceConnection
     PostgreSQLContainer<?> postgresContainer() {
-        return new PostgreSQLContainer<>(DockerImageName.parse("postgres:latest"));
+        PostgreSQLContainer<?> container = new PostgreSQLContainer<>(DockerImageName.parse("postgres:latest"))
+                .withDatabaseName("vivavis_db")
+                .withUsername("User")
+                .withPassword("");
+        container.start();
+        return container;
     }
 
     @Bean
     @ServiceConnection
     RabbitMQContainer rabbitContainer() {
-        return new RabbitMQContainer(DockerImageName.parse("rabbitmq:latest"));
+        RabbitMQContainer container = new RabbitMQContainer(DockerImageName.parse("rabbitmq:latest"));
+        container.start();  // Запуск контейнера RabbitMQ
+        return container;
     }
-
 }
