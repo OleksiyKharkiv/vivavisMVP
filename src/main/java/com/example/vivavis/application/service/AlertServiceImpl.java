@@ -7,6 +7,7 @@ import com.example.vivavis.domain.entity.Alert;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class AlertServiceImpl implements AlertServicePort {
@@ -23,7 +24,7 @@ public class AlertServiceImpl implements AlertServicePort {
     }
 
     @Override
-    public Alert getAlertById(Long id) {
+    public Alert getAlertById(UUID id) {
         return alertRepository.findById(id).orElseThrow(() -> new RuntimeException("Alert not found"));
     }
 
@@ -33,7 +34,7 @@ public class AlertServiceImpl implements AlertServicePort {
     }
 
     @Override
-    public Alert updateAlert(Long id, Alert updatedAlert) {
+    public Alert updateAlert(UUID id, Alert updatedAlert) {
         Alert existingAlert = alertRepository.findById(id).orElseThrow(() -> new RuntimeException("Alert not found"));
         existingAlert.setAlertType(updatedAlert.getAlertType());
         existingAlert.setCreatedAt(updatedAlert.getCreatedAt());
@@ -42,7 +43,7 @@ public class AlertServiceImpl implements AlertServicePort {
     }
 
     @Override
-    public void deleteAlert(Long id) {
+    public void deleteAlert(UUID id) {
         alertRepository.deleteById(id);
     }
 }

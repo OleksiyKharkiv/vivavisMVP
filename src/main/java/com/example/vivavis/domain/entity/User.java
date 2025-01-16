@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
 import java.util.Objects;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -19,7 +20,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Long id;  // Primary key
+    private UUID id;  // Primary key
 
     @Column(name = "username", nullable = false, unique = true)
     private String username;  // Уникальное имя пользователя

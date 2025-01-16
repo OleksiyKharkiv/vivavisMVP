@@ -7,6 +7,7 @@ import org.hibernate.proxy.HibernateProxy;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -21,7 +22,7 @@ public class Alert {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Long id;  // Primary key
+    private UUID id;  // Primary key
 
     @Column(name = "alert_type", nullable = false)
     private String alertType;  // Type of the alert (e.g., critical, warning)

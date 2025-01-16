@@ -7,6 +7,7 @@ import com.example.vivavis.domain.entity.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class UserServiceImpl implements UserServicePort {
@@ -23,7 +24,7 @@ public class UserServiceImpl implements UserServicePort {
     }
 
     @Override
-    public User getUserById(Long id) {
+    public User getUserById(UUID id) {
         return userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
     }
 
@@ -33,7 +34,7 @@ public class UserServiceImpl implements UserServicePort {
     }
 
     @Override
-    public User updateUser(Long id, User updatedUser) {
+    public User updateUser(UUID id, User updatedUser) {
         User existingUser = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
         existingUser.setUsername(updatedUser.getUsername());
         existingUser.setPassword(updatedUser.getPassword());
@@ -43,7 +44,7 @@ public class UserServiceImpl implements UserServicePort {
     }
 
     @Override
-    public void deleteUser(Long id) {
+    public void deleteUser(UUID id) {
         userRepository.deleteById(id);
     }
 }

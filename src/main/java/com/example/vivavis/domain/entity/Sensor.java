@@ -6,6 +6,7 @@ import org.hibernate.proxy.HibernateProxy;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -20,7 +21,7 @@ public class Sensor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Long id;  // Primary key
+    private UUID id;  // Primary key
 
     @Column(name = "sensor_id", nullable = false, unique = true)
     private String sensorId;  // Unique sensor identifier
