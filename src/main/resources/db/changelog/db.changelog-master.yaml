@@ -100,6 +100,42 @@ databaseChangeLog:
       id: 4
       author: user
       changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: role
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 5
+      author: user
+      changes:
         - addForeignKeyConstraint:
             baseTableName: sensors
             baseColumnNames: alert_id
@@ -108,7 +144,7 @@ databaseChangeLog:
             referencedColumnNames: id
 
   - changeSet:
-      id: 5
+      id: 6
       author: user
       changes:
         - addForeignKeyConstraint:
