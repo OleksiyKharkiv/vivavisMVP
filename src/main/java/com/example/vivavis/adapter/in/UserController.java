@@ -1,8 +1,7 @@
 package com.example.vivavis.adapter.in;
 
-import com.example.vivavis.domain.entity.User;
 import com.example.vivavis.application.port.UserServicePort;
-
+import com.example.vivavis.domain.entity.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

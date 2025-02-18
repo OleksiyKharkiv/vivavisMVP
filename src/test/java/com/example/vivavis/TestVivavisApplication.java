@@ -7,5 +7,4 @@ public class TestVivavisApplication {
     public static void main(String[] args) {
         SpringApplication.from(VivavisApplication::main).with(TestcontainersConfiguration.class).run(args);
     }
-
 }

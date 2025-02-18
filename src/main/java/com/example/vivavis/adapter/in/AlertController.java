@@ -1,8 +1,7 @@
 package com.example.vivavis.adapter.in;
 
-import com.example.vivavis.domain.entity.Alert;
 import com.example.vivavis.application.port.AlertServicePort;
-
+import com.example.vivavis.domain.entity.Alert;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

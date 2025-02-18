@@ -1,8 +1,7 @@
 package com.example.vivavis.adapter.in;
 
-import com.example.vivavis.domain.entity.Event;
 import com.example.vivavis.application.port.EventServicePort;
-
+import com.example.vivavis.domain.entity.Event;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

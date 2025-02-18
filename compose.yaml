@@ -22,7 +22,7 @@ services:
     networks:
       - mynetwork
 
-  app:  # Your application service
+  app: # Your application service
     image: 'vivavis-app-image'
     environment:
       - 'SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/vivavis_db'
